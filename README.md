@@ -1,15 +1,15 @@
-BNR4e_Ch24_Homepwner
+BNR4e_Ch25_Localization-Homepwner
 ======================== 
 
 Big Nerd Ranch's iOS Programming 4th ed, Hillegass & Conway
-Ch 24 - State Restoration
+Ch 25 - Localization
 
 Homepwner app 
-- this app builds on the functionality of the Homepwner app from chapter 23.
+- this app builds on the functionality of the Homepwner app from chapter 24.
 
-Chapter 24 covers the following :
-- State Restoration Life Cycle
-- Restoration Identifiers and Classes
+Chapter 25 covers the following : 
+- Localizing (and perhaps Internationalizing) the Homepwner app.  
+- NSNumberFormatter and NSDateFormatter 
 
 -----------------------------------
 Tagging Conventions: 

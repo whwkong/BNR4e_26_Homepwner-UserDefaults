@@ -59,6 +59,12 @@
                           selector:@selector(updateTableViewForDynamicTypeSize)
                               name:UIContentSizeCategoryDidChangeNotification
                             object:nil];
+        
+        // register for locale change notifications
+        [defaultCenter addObserver:self
+                          selector:@selector(localeChanged:)
+                              name:NSCurrentLocaleDidChangeNotification
+                            object:nil];
     }
     
     return self;
@@ -148,6 +154,13 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - Localization
+// Action for handling localization notifications
+- (void)localeChanged:(NSNotification *)note
+{
+    [self.tableView reloadData]; 
+}
+
 #pragma mark - State Restoration
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
@@ -220,7 +233,14 @@
     // configure cell with BNRItem
     cell.nameLabel.text = item.itemName;
     cell.serialNumberLabel.text = item.serialNumber;
-    cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
+    
+    // Localize data : create a number formatter for currency
+    static NSNumberFormatter *currencyFormatter = nil;
+    if (currencyFormatter == nil) {
+        currencyFormatter = [[NSNumberFormatter alloc] init];
+        currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    }
+    cell.valueLabel.text = [currencyFormatter stringFromNumber:@(item.valueInDollars)];
 
     cell.thumbnailView.image = item.thumbnail;
     
