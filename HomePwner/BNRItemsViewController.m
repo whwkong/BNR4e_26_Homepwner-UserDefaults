@@ -39,7 +39,7 @@
     
     if (self) {
         UINavigationItem *navItem = self.navigationItem;
-        navItem.title = @"Homepwner";
+        navItem.title = NSLocalizedString(@"Homepwner", @"Name of Application");
         
         // Create restoration id
         self.restorationIdentifier = NSStringFromClass([self class]);
@@ -158,7 +158,7 @@
 // Action for handling localization notifications
 - (void)localeChanged:(NSNotification *)note
 {
-    [self.tableView reloadData]; 
+    [self.tableView reloadData];
 }
 
 #pragma mark - State Restoration

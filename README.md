@@ -8,8 +8,9 @@ Homepwner app
 - this app builds on the functionality of the Homepwner app from chapter 24.
 
 Chapter 25 covers the following : 
-- Localizing (and perhaps Internationalizing) the Homepwner app.  
+- Localizing the Homepwner app.  
 - NSNumberFormatter and NSDateFormatter 
+- NSLocalizedString() and Strings Tables
 
 -----------------------------------
 Tagging Conventions: 
