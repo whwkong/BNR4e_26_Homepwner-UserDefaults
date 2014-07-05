@@ -10,7 +10,8 @@ Homepwner app
 Chapter 26 covers the following : 
 - Creating a user's default preferences' plist 
 - Registering factory settings
-- Reading/Modifying preferences 
+- Reading/Modifying preferences
+- Creating a settings bundle (user can modify in Settings app)
 
 -----------------------------------
 Tagging Conventions: 
