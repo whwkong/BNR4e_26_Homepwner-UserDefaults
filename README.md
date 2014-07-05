@@ -1,16 +1,16 @@
-BNR4e_Ch25_Localization-Homepwner
+BNR4e_Ch26_NSUserDefaults-Homepwner
 ======================== 
 
 Big Nerd Ranch's iOS Programming 4th ed, Hillegass & Conway
-Ch 25 - Localization
+Ch 26 - NSUserDefaults
 
 Homepwner app 
-- this app builds on the functionality of the Homepwner app from chapter 24.
+- this app builds on the functionality of the Homepwner app from chapter 25.
 
-Chapter 25 covers the following : 
-- Localizing the Homepwner app.  
-- NSNumberFormatter and NSDateFormatter 
-- NSLocalizedString() and Strings Tables
+Chapter 26 covers the following : 
+- Creating a user's default preferences' plist 
+- Registering factory settings
+- Reading/Modifying preferences 
 
 -----------------------------------
 Tagging Conventions: 

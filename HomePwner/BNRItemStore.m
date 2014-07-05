@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 William Kong. All rights reserved.
 //
 
+#import "BNRAppDelegate.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
@@ -147,6 +148,14 @@
                                                   inManagedObjectContext:self.context];
     
     item.orderingValue = order;
+    
+    // get factory defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    item.valueInDollars = [defaults integerForKey:BNRNextItemValuePrefsKey];
+    item.itemName = [defaults objectForKey:BNRNextItemNamePrefsKey];
+    
+    // List out all the defaults
+    NSLog(@"defaults = %@", [defaults dictionaryRepresentation]);
     
     [self.privateItems addObject:item];
     

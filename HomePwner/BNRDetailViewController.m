@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 William Kong. All rights reserved.
 //
 
+#import "BNRAppDelegate.h"
 #import "BNRDetailViewController.h"
 #import "BNRAssetTypeViewController.h"
 #import "BNRItem.h"
@@ -191,8 +192,19 @@
     BNRItem *item = self.item;
     item.itemName = self.nameField.text;
     item.serialNumber = self.serialNumberField.text;
-    item.valueInDollars = [self.valueField.text intValue];
     
+    int newValue = [self.valueField.text intValue];
+    
+    // is it changed?
+    if (newValue != item.valueInDollars) {
+        // Put it in the item
+        item.valueInDollars = newValue;
+        
+        // Store it as the default value for the next time
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:newValue
+                      forKey:BNRNextItemValuePrefsKey];
+    }
 }
 
 #pragma mark - State Restoration
